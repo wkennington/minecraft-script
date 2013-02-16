@@ -1,7 +1,9 @@
-#!/bin/sh
-DL="$(which wget) -O"
+#!/usr/bin/env sh
+DIR="$(dirname "$(readlink -f "$0")")"
+cd "$DIR"
+DL="$(which fetch) -o"
 if [ "$?" -ne "0" ]; then
-	DL="$(which fetch) -o"
+	DL="$(which wget) -O"
 fi
 if [ "$?" -ne "0" ]; then
 	DL="$(which curl) -o"
@@ -10,17 +12,18 @@ if [ "$?" -ne "0" ]; then
 	echo "No Downloader Available" >&2
 	exit 1
 fi
+echo "Using '$DL' for downloading files"
 
-function get ()
+get ()
 {
-	echo "Updating $1"
-	$DL "${1}.tmp" "$2" >/dev/null 2>&1
-	zip -T "${1}.tmp" >/dev/null 2>&1
+	echo "Updating $2"
+	$DL "$1/${2}.tmp" "$3" >/dev/null 2>&1
+	zip -T "$1/${2}.tmp" >/dev/null 2>&1
 	if [ "$?" -ne "0" ]; then
-		rm "${1}.tmp"
-		echo "Failed to update $1" >&2
+		rm -f "$1/${2}.tmp"
+		echo "Failed to update $2" >&2
 	else
-		mv "${1}.tmp" "$1"
+		mv "$1/${2}.tmp" "$1/$2"
 	fi
 }
 
@@ -34,13 +37,48 @@ for i in $INIT; do
 done
 git submodule -q foreach --recursive "git pull origin master 2>&1"
 
-get minecraft_server.jar https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar
-get forge.jar http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip
-get coremods/CodeChickenCore.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1
-get coremods/NotEnoughItems.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1
-get mods/ChickenChunks.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1
+# Cleanup Interrupt
+clean ()
+{
+	eval 'rm -rf "$TMP"'
+	exit 0
+}
+trap clean SIGINT
+trap clean SIGQUIT
 
-# BuildCraft
-cd BuildCraft
-ant
-cd ..
+# Setup TEMP
+TMP="$(mktemp -d /tmp/mcup.XXXX)"
+mkdir "$TMP/coremods"
+mkdir "$TMP/mods"
+
+# Automatic Updates
+get "$TMP" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
+get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
+get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1'
+get "$TMP" "coremods/NotEnoughItems.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1'
+get "$TMP" "mods/ChickenChunks.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1'
+get "$TMP" "mods/CompactSolars.jar" 'http://files.minecraftforge.net/CompactSolars/compactsolars-universal-latest.zip'
+get "$TMP" "mods/IronChests.jar" 'http://files.minecraftforge.net/IronChests2/ironchest-universal-latest.zip'
+
+# Manual Updates
+get "$TMP" "mods/BuildCraft.jar" 'http://205.196.123.74/761de1x93sxg/923n56cdhv33jye/buildcraft-A-3.4.3.jar'
+get "$TMP" "mods/ComputerCraft.jar" 'http://www.mediafire.com/?bsqfq6dafnu1p56' # Version 1.5
+get "$TMP" "mods/EquivalentExchange.jar" 'https://dl.dropbox.com/u/25591134/EE3/MC%201.4.7/pre1f/ee3-universal-pre1f.jar'
+get "$TMP" "mods/ExtraBees.jar" 'http://205.196.120.180/i4mkc0cnp7ig/bgub9y6hiq38by1/extrabees-1.5.0.2.zip'
+get "$TMP" "mods/ExtraBiomesXL.jar" 'http://205.196.120.172/66ye7fkq9afg/qe9ofpw2hytice5/ExtrabiomesXL-universal-1.4.7-3.9.0.jar'
+get "$TMP" "mods/Factorization.jar" 'https://dl.dropbox.com/u/76265666/old/Factorization-0.7.10.jar'
+get "$TMP" "mods/Forestry.jar" 'http://199.91.152.194/3jz2dldt8dlg/ft9g77zbs1dnrda/forestry-A-2.0.0.10.jar' # http://forestry.sengir.net/wiki.new/doku.php?id=main:downloads
+get "$TMP" "mods/GraviSuite.jar" 'http://forum.industrial-craft.net/index.php?page=Attachment&attachmentID=2547&h=b2fc2f6fc6c757a3b67a2743ffeeb903a2ce6ed9' # V1.6 http://forum.industrial-craft.net/index.php?page=Thread&threadID=6915
+get "$TMP" "mods/IndustrialCraft.jar" 'http://ic2api.player.to:8080/job/IC2_lf/207/artifact/packages/industrialcraft-2_1.115.207-lf.jar' # http://forum.industrial-craft.net/index.php?page=Board&boardID=44
+get "$TMP" "mods/MiscPeripherals.jar" 'https://dl.dropbox.com/u/861751/Mods/miscperipherals/miscperipherals-3.1.jar' # http://www.computercraft.info/forums2/index.php?/topic/4587-cc15mc147-miscperipherals-31/
+get "$TMP" "mods/ModularForceFieldSystem.jar" 'http://forum.industrial-craft.net/index.php?page=Attachment&attachmentID=2618&h=c32c7368b8dbf69bc30d4a36614032158ee8c729' # V2.2.8.3.6 http://forum.industrial-craft.net/index.php?page=Thread&threadID=1292
+get "$TMP" "mods/ThaumCraft.jar" 'https://dl.dropbox.com/u/47135879/Thaumcraft3.0.3.zip'
+
+# Old Mods
+# Enderstorage
+# Gravigun
+# IC2 Nuclear Control
+
+#cp -a "$TMP/" "server"
+
+clean
