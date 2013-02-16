@@ -1,0 +1,46 @@
+#!/bin/sh
+DL="$(which wget) -O"
+if [ "$?" -ne "0" ]; then
+	DL="$(which fetch) -o"
+fi
+if [ "$?" -ne "0" ]; then
+	DL="$(which curl) -o"
+fi
+if [ "$?" -ne "0" ]; then
+	echo "No Downloader Available" >&2
+	exit 1
+fi
+
+function get ()
+{
+	echo "Updating $1"
+	$DL "${1}.tmp" "$2" >/dev/null 2>&1
+	zip -T "${1}.tmp" >/dev/null 2>&1
+	if [ "$?" -ne "0" ]; then
+		rm "${1}.tmp"
+		echo "Failed to update $1" >&2
+	else
+		mv "${1}.tmp" "$1"
+	fi
+}
+
+# Update Submodules
+echo "Updating Git"
+INIT=$(git submodule status --recursive | grep -ve "([^)]*)" | awk '{print $2}')
+for i in $INIT; do
+	UP="1"
+	git submodule -q update --init --recursive $i
+	echo "Initialized $i"
+done
+git submodule -q foreach --recursive "git pull origin master 2>&1"
+
+get minecraft_server.jar https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar
+get forge.jar http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip
+get coremods/CodeChickenCore.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1
+get coremods/NotEnoughItems.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1
+get mods/ChickenChunks.jar http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1
+
+# BuildCraft
+cd BuildCraft
+ant
+cd ..
