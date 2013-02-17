@@ -97,6 +97,12 @@ get "$TMP" "mods/ThermalExpansion.jar" 'https://dl.dropbox.com/u/57416963/Minecr
 get "$TMP" "mods/ShockAPI.jar" 'http://205.196.120.149/ycrlf564nqmg/4iz8itd3pmq27zy/ShockAhPI+r5.1.zip' # Aether Dep 
 get "$TMP" "mods/PlayerAPI.jar" 'http://205.196.120.112/mx1pcy3e00tg/t40yss5tldmhj19/PlayerAPI+1.7.3+v1.1.zip' # Aether Dep
 
+# Client only
+get "client" "mods/ReiMinimap.jar" 'http://goo.gl/4UUbo' # V3.2_06 http://www.minecraftforum.net/topic/482147-147-jan10-reis-minimap-v32-06/
+get "client" "mods/InvTweaks.jar" 'http://dl.dropbox.com/u/7592975/InvTweaks/InvTweaks-1.50-1.4.7.zip' # uri: http://www.minecraftforum.net/topic/323444-147-inventory-tweaks-150-jan-17/
+get "client" "minecraft.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft.jar'
+get "client" "minecraft.exe" 'https://s3.amazonaws.com/MinecraftDownload/launcher/Minecraft.exe'
+
 # Old Mods
 # Gravigun
 # IC2 Nuclear Control
