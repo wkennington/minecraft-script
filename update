@@ -52,8 +52,6 @@ mkdir "$TMP/coremods"
 mkdir "$TMP/mods"
 
 # Automatic Updates
-get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
-
 get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "coremods/NotEnoughItems.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 
@@ -108,7 +106,18 @@ get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/
 cp -a "$TMP/" "server"
 cp -a "$TMP/" "client"
 
+get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
+
+cp -a "$TMP/forge.jar" "server"
 get "server" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
-get "client" "minecraft.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft.jar'
+
+get "$TMP" "minecraft.jar" 'https://s3.amazonaws.com/MinecraftDownload/minecraft.jar'
+mkdir "$TMP/forge"
+zip -d "$TMP/minecraft.jar" META-INF/MOJANG\*
+unzip -d "$TMP/forge" "$TMP/forge.jar"
+cd "$TMP/forge"
+zip -r "$TMP/minecraft.jar" .
+mv "$TMP/minecraft.jar" "$DIR/client/bin/minecraft.jar"
+cd "$DIR"
 
 clean
