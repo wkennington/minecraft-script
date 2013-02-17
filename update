@@ -60,9 +60,9 @@ get "$TMP" "mods/ChickenChunks.jar" 'http://www.chickenbones.craftsaddle.org/Fil
 get "$TMP" "mods/CompactSolars.jar" 'http://files.minecraftforge.net/CompactSolars/compactsolars-universal-latest.zip'
 get "$TMP" "mods/EnderStorage.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=EnderStorage&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/IronChests.jar" 'http://files.minecraftforge.net/IronChests2/ironchest-universal-latest.zip'
-get "$TMP" "mods/WirelessRedstoneCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20Core&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
-get "$TMP" "mods/WirelessRedstoneAddons.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20Addons&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
-get "$TMP" "mods/WirelessRedstoneRedPower.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20RedPower&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/WirelessRedstoneCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20Core&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/WirelessRedstoneAddons.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20Addons&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/WirelessRedstoneRedPower.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20RedPower&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 
 # Manual Updates
 get "$TMP" "mods/BuildCraft.jar" 'http://205.196.123.74/761de1x93sxg/923n56cdhv33jye/buildcraft-A-3.4.3.jar'
@@ -98,6 +98,7 @@ get "$TMP" "mods/ThaumCraft.jar" 'https://dl.dropbox.com/u/47135879/Thaumcraft3.
 # IC2 Nuclear Control
 # Obsidian Pressure Plates
 
-#cp -a "$TMP/" "server"
+cp -a "$TMP/" "server"
+cp -a "$TMP/" "client"
 
 clean
