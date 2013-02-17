@@ -112,6 +112,10 @@ rm -rf client/natives
 mkdir -p  client/natives/{linux,macosx}
 unzip -x 'META-INF*' -d client/natives/linux "$TMP/linux_natives.jar"
 unzip -x 'META-INF*' -d client/natives/macosx "$TMP/macosx_natives.jar"
+get "client/bin" "jinput.jar" 'https://s3.amazonaws.com/minecraftdownload/jinput.jar'
+get "client/bin" "lwgl.jar" 'https://s3.amazonaws.com/minecraftdownload/lwgl.jar'
+get "client/bin" "lwgl_util.jar" 'https://s3.amazonaws.com/minecraftdownload/lwgl_util.jar'
+echo -n " $(date +%s)" client/bin/version
 
 # Old Mods
 # Gravigun
