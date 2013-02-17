@@ -96,12 +96,12 @@ get "$TMP" "mods/ThermalExpansion.jar" 'https://dl.dropbox.com/u/57416963/Minecr
 
 get "$TMP" "mods/ShockAPI.jar" 'http://205.196.120.149/ycrlf564nqmg/4iz8itd3pmq27zy/ShockAhPI+r5.1.zip' # Aether Dep 
 get "$TMP" "mods/PlayerAPI.jar" 'http://205.196.120.112/mx1pcy3e00tg/t40yss5tldmhj19/PlayerAPI+1.7.3+v1.1.zip' # Aether Dep
-get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip' # http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip
 
 # Old Mods
 # Gravigun
 # IC2 Nuclear Control
 # get "$TMP" "mods/PortalGun.jar" 'http://199.91.153.137/fvfq1v3d3u8g/v7ouuz9gnzxuxxc/PortalGun1.4.7v4.zip' # http://ichun.us/mods/portalgun/download/
+# get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip' # http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip
 
 cp -a "$TMP/*" "server"
 cp -a "$TMP/*" "client"
