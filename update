@@ -78,8 +78,8 @@ get "$TMP" "mods/IndustrialCraft.jar" 'http://ic2api.player.to:8080/job/IC2_lf/2
 get "$TMP" "mods/MiscPeripherals.jar" 'https://dl.dropbox.com/u/861751/Mods/miscperipherals/miscperipherals-3.1.jar' # http://www.computercraft.info/forums2/index.php?/topic/4587-cc15mc147-miscperipherals-31/
 get "$TMP" "mods/ModularForceFieldSystem.jar" 'http://forum.industrial-craft.net/index.php?page=Attachment&attachmentID=2618&h=c32c7368b8dbf69bc30d4a36614032158ee8c729' # V2.2.8.3.6 http://forum.industrial-craft.net/index.php?page=Thread&threadID=1292
 get "$TMP" "mods/MystCraft.jar" 'http://binarymage.com/mystcraft/publish/mystcraft-uni-1.4.7-0.10.0.00.zip' # http://binarymage.com/category/mystcraft/
+get "$TMP" "mods/ObsidianPressurePlates.jar" 'https://dl.dropbox.com/u/39079855/minecraft_dev/ObsidiPlates/obsidiplates-universal-1.2.0.3.zip' # http://forum.feed-the-beast.com/threads/obsidian-pressure-plates.755/
 get "$TMP" "mods/OmniTools.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/OmniTools/Release/OmniTools-3.0.2.zip' # http://thermalexpansion.wikispaces.com/OmniTools
-get "$TMP" "mods/PortalGun.jar" 'http://199.91.153.137/fvfq1v3d3u8g/v7ouuz9gnzxuxxc/PortalGun1.4.7v4.zip' # http://ichun.us/mods/portalgun/download/
 get "$TMP" "mods/RailCraft.jar" 'http://dl.dropbox.com/u/38558957/Minecraft/Railcraft_1.4.7-6.15.3.0.jar' # http://www.railcraft.info/releases
 get "$TMP" "mods/RedPowerCore.jar" 'http://www.eloraam.com/files/43143756a7636620da44/RedPowerCore-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
 get "$TMP" "mods/RedPowerDigital.jar" 'http://www.eloraam.com/files/db77437ae86ac3b0ccf7/RedPowerDigital-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
@@ -95,7 +95,7 @@ get "$TMP" "mods/XyCraft.jar" 'https://dl.dropbox.com/s/49mfiqg2cuvmavn/xycraft-
 # Old Mods
 # Gravigun
 # IC2 Nuclear Control
-# Obsidian Pressure Plates
+# get "$TMP" "mods/PortalGun.jar" 'http://199.91.153.137/fvfq1v3d3u8g/v7ouuz9gnzxuxxc/PortalGun1.4.7v4.zip' # http://ichun.us/mods/portalgun/download/
 
 cp -a "$TMP/" "server"
 cp -a "$TMP/" "client"
