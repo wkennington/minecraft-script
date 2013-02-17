@@ -102,6 +102,16 @@ get "client" "mods/ReiMinimap.jar" 'http://goo.gl/4UUbo' # V3.2_06 http://www.mi
 get "client" "mods/InvTweaks.jar" 'http://dl.dropbox.com/u/7592975/InvTweaks/InvTweaks-1.50-1.4.7.zip' # uri: http://www.minecraftforum.net/topic/323444-147-inventory-tweaks-150-jan-17/
 get "client" "minecraft.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft.jar'
 $DL "client/minecraft.exe" 'https://s3.amazonaws.com/MinecraftDownload/launcher/Minecraft.exe'
+get "$TMP" "macosx_natives.jar" 'https://s3.amazonaws.com/MinecraftDownload/macosx_natives.jar'
+get "$TMP" "linux_natives.jar" 'https://s3.amazonaws.com/MinecraftDownload/linux_natives.jar'
+get "$TMP" "windows_natives.jar" 'https://s3.amazonaws.com/MinecraftDownload/windows_natives.jar'
+rm -rf client/bin/natives
+mkdir client/bin/natives
+unzip -x 'META-INF*' -d client/bin/natives "$TMP/windows_natives.jar"
+rm -rf client/natives
+mkdir -p  client/natives/{linux,macosx}
+unzip -x 'META-INF*' -d client/natives/linux "$TMP/linux_natives.jar"
+unzip -x 'META-INF*' -d client/natives/macosx "$TMP/macosx_natives.jar"
 
 # Old Mods
 # Gravigun
