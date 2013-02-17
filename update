@@ -52,7 +52,6 @@ mkdir "$TMP/coremods"
 mkdir "$TMP/mods"
 
 # Automatic Updates
-get "$TMP" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
 get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
 
 get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
@@ -108,5 +107,8 @@ get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/
 
 cp -a "$TMP/" "server"
 cp -a "$TMP/" "client"
+
+get "server" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
+get "client" "minecraft.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft.jar'
 
 clean
