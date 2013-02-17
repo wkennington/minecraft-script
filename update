@@ -54,19 +54,22 @@ mkdir "$TMP/mods"
 # Automatic Updates
 get "$TMP" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
 get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
+
 get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "coremods/NotEnoughItems.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+
+get "$TMP" "mods/AudioMod.jar" 'http://dl.dropbox.com/u/20629262/Latest/AudioMod.zip' # http://www.minecraftforum.net/topic/75440-v147-risugamis-mods-updated/
 get "$TMP" "mods/ChickenChunks.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/CompactSolars.jar" 'http://files.minecraftforge.net/CompactSolars/compactsolars-universal-latest.zip'
 get "$TMP" "mods/EnderStorage.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=EnderStorage&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/IronChests.jar" 'http://files.minecraftforge.net/IronChests2/ironchest-universal-latest.zip'
+
 get "$TMP" "mods/WirelessRedstoneCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20Core&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/WirelessRedstoneAddons.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20Addons&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/WirelessRedstoneRedPower.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WR-CBE%20RedPower&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 
 # Manual Updates
 get "$TMP" "mods/BuildCraft.jar" 'http://205.196.123.74/761de1x93sxg/923n56cdhv33jye/buildcraft-A-3.4.3.jar'
-get "$TMP" "mods/CoFHCore.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/CoFHCore/CoFHCore-1.4.7.0.zip' # http://thermalexpansion.wikispaces.com/Downloads
 get "$TMP" "mods/ComputerCraft.jar" 'http://www.mediafire.com/?bsqfq6dafnu1p56' # Version 1.5
 get "$TMP" "mods/EquivalentExchange.jar" 'https://dl.dropbox.com/u/25591134/EE3/MC%201.4.7/pre1f/ee3-universal-pre1f.jar'
 get "$TMP" "mods/ExtraBees.jar" 'http://205.196.120.180/i4mkc0cnp7ig/bgub9y6hiq38by1/extrabees-1.5.0.2.zip'
@@ -87,10 +90,16 @@ get "$TMP" "mods/RedPowerMechanical.jar" 'http://www.eloraam.com/files/f33ffab22
 get "$TMP" "mods/RedPowerCompat.jar" 'http://www.eloraam.com/files/9445db5ef4a2014a12b2/RedPowerCompat-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
 get "$TMP" "mods/SoulShards.jar" 'https://dl.dropbox.com/u/39016701/Downloads/SoulShards-v1.26-universal.zip' # http://www.minecraftforum.net/topic/1475847-146-forgeirc-v1014-soul-shards-v126-and-recipe-remover-v11-updated-122013/#soulshards
 get "$TMP" "mods/StevesCarts.jar" 'https://dl.dropbox.com/u/46486053/StevesCarts2.0.0.a57.zip' # http://stevescarts2.wikispaces.com/Download
-get "$TMP" "mods/ThermalExpansion.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/ThermalExpansion/Release/ThermalExpansion-2.2.1.0.zip' # http://thermalexpansion.wikispaces.com/Downloads
 get "$TMP" "mods/ThaumCraft.jar" 'https://dl.dropbox.com/u/47135879/Thaumcraft3.0.3.zip'
 get "$TMP" "mods/TwilightForest.jar" 'https://dl.dropbox.com/u/38679977/twilightforest-1.15.3.zip' # http://www.minecraftforum.net/topic/561673-147-the-twilight-forest-v1153-bug-and-compatibility-fixes/
 get "$TMP" "mods/XyCraft.jar" 'https://dl.dropbox.com/s/49mfiqg2cuvmavn/xycraft-universal-1.4.6-0.9.44.zip?dl=1' # http://xycraft.wikispaces.com/Downloads
+
+get "$TMP" "mods/CoFHCore.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/CoFHCore/CoFHCore-1.4.7.0.zip' # TE Dep
+get "$TMP" "mods/ThermalExpansion.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/ThermalExpansion/Release/ThermalExpansion-2.2.1.0.zip' # http://thermalexpansion.wikispaces.com/Downloads
+
+get "$TMP" "mods/ShockAPI.jar" 'http://205.196.120.149/ycrlf564nqmg/4iz8itd3pmq27zy/ShockAhPI+r5.1.zip' # Aether Dep 
+get "$TMP" "mods/PlayerAPI.jar" 'http://205.196.120.112/mx1pcy3e00tg/t40yss5tldmhj19/PlayerAPI+1.7.3+v1.1.zip' # Aether Dep
+get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip' # http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/Aether1.7.3+V1.02.zip
 
 # Old Mods
 # Gravigun
