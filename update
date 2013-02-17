@@ -54,11 +54,15 @@ mkdir "$TMP/mods"
 # Automatic Updates
 get "$TMP" "minecraft_server.jar" 'https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
 get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
-get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1'
-get "$TMP" "coremods/NotEnoughItems.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1'
-get "$TMP" "mods/ChickenChunks.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1'
+get "$TMP" "coremods/CodeChickenCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=CodeChickenCore&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "coremods/NotEnoughItems.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=NotEnoughItems&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/ChickenChunks.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=ChickenChunks&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/CompactSolars.jar" 'http://files.minecraftforge.net/CompactSolars/compactsolars-universal-latest.zip'
+get "$TMP" "mods/EnderStorage.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=EnderStorage&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 get "$TMP" "mods/IronChests.jar" 'http://files.minecraftforge.net/IronChests2/ironchest-universal-latest.zip'
+get "$TMP" "mods/WirelessRedstoneCore.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20Core&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/WirelessRedstoneAddons.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20Addons&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
+get "$TMP" "mods/WirelessRedstoneRedPower.jar" 'http://www.chickenbones.craftsaddle.org/Files/goto.php?file=WRE-CBE%20RedPower&a=1' # http://www.chickenbones.craftsaddle.org/Files/Old_Versions/
 
 # Manual Updates
 get "$TMP" "mods/BuildCraft.jar" 'http://205.196.123.74/761de1x93sxg/923n56cdhv33jye/buildcraft-A-3.4.3.jar'
@@ -72,12 +76,27 @@ get "$TMP" "mods/GraviSuite.jar" 'http://forum.industrial-craft.net/index.php?pa
 get "$TMP" "mods/IndustrialCraft.jar" 'http://ic2api.player.to:8080/job/IC2_lf/207/artifact/packages/industrialcraft-2_1.115.207-lf.jar' # http://forum.industrial-craft.net/index.php?page=Board&boardID=44
 get "$TMP" "mods/MiscPeripherals.jar" 'https://dl.dropbox.com/u/861751/Mods/miscperipherals/miscperipherals-3.1.jar' # http://www.computercraft.info/forums2/index.php?/topic/4587-cc15mc147-miscperipherals-31/
 get "$TMP" "mods/ModularForceFieldSystem.jar" 'http://forum.industrial-craft.net/index.php?page=Attachment&attachmentID=2618&h=c32c7368b8dbf69bc30d4a36614032158ee8c729' # V2.2.8.3.6 http://forum.industrial-craft.net/index.php?page=Thread&threadID=1292
+get "$TMP" "mods/MystCraft.jar" 'http://binarymage.com/mystcraft/publish/mystcraft-uni-1.4.7-0.10.0.00.zip' # http://binarymage.com/category/mystcraft/
+get "$TMP" "mods/OmniTools.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/OmniTools/Release/OmniTools-3.0.2.zip' # http://thermalexpansion.wikispaces.com/OmniTools
+get "$TMP" "mods/PortalGun.jar" 'http://repo.creeperhost.net/downloads/ichun/filespg%5EPortalGun1.4.7v4.zip' # http://ichun.us/mods/portalgun/download/
+get "$TMP" "mods/RailCraft.jar" 'http://dl.dropbox.com/u/38558957/Minecraft/Railcraft_1.4.7-6.15.3.0.jar' # http://www.railcraft.info/releases
+get "$TMP" "mods/RedPowerCore.jar" 'http://www.eloraam.com/files/43143756a7636620da44/RedPowerCore-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
+get "$TMP" "mods/RedPowerDigital.jar" 'http://www.eloraam.com/files/db77437ae86ac3b0ccf7/RedPowerDigital-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
+get "$TMP" "mods/RedPowerMechanical.jar" 'http://www.eloraam.com/files/f33ffab221579545ec5a/RedPowerMechanical-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
+get "$TMP" "mods/RedPowerCompat.jar" 'http://www.eloraam.com/files/9445db5ef4a2014a12b2/RedPowerCompat-2.0pr6.zip' # http://www.eloraam.com/download-redpower/
+get "$TMP" "mods/SoulShards.jar" 'https://dl.dropbox.com/u/39016701/Downloads/SoulShards-v1.26-universal.zip' # http://www.minecraftforum.net/topic/1475847-146-forgeirc-v1014-soul-shards-v126-and-recipe-remover-v11-updated-122013/#soulshards
+get "$TMP" "mods/StevesCarts.jar" 'https://dl.dropbox.com/u/46486053/StevesCarts2.0.0.a57.zip' # http://stevescarts2.wikispaces.com/Download
+get "$TMP" "mods/CoFHCore.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/CoFHCore/CoFHCore-1.4.7.0.zip' # http://thermalexpansion.wikispaces.com/Downloads
+get "$TMP" "mods/ThermalExpansion.jar" 'https://dl.dropbox.com/u/57416963/Minecraft/ThermalExpansion/Release/ThermalExpansion-2.2.1.0.zip' # http://thermalexpansion.wikispaces.com/Downloads
+get "$TMP" "mods/TwilightForest.jar" 'https://dl.dropbox.com/u/38679977/twilightforest-1.15.3.zip' # http://www.minecraftforum.net/topic/561673-147-the-twilight-forest-v1153-bug-and-compatibility-fixes/
+get "$TMP" "mods/XyCraft.jar" 'https://dl.dropbox.com/s/49mfiqg2cuvmavn/xycraft-universal-1.4.6-0.9.44.zip?dl=1' # http://xycraft.wikispaces.com/Downloads
+get "$TMP" "mods/WirelessRedstone.jar" 'http://minecraft.ali4z.com/downloads/1.6.1/1_4_7/WirelessRedstone.zip' # http://www.minecraftforum.net/topic/328725-147wireless-redstone-v161/
 get "$TMP" "mods/ThaumCraft.jar" 'https://dl.dropbox.com/u/47135879/Thaumcraft3.0.3.zip'
 
 # Old Mods
-# Enderstorage
 # Gravigun
 # IC2 Nuclear Control
+# Obsidian Pressure Plates
 
 #cp -a "$TMP/" "server"
 
