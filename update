@@ -103,8 +103,8 @@ get "$TMP" "mods/Aether.jar" 'http://199.91.152.59/dtt2f0hu897g/fpe2e3oiejbfgl4/
 # IC2 Nuclear Control
 # get "$TMP" "mods/PortalGun.jar" 'http://199.91.153.137/fvfq1v3d3u8g/v7ouuz9gnzxuxxc/PortalGun1.4.7v4.zip' # http://ichun.us/mods/portalgun/download/
 
-cp -a "$TMP/" "server"
-cp -a "$TMP/" "client"
+cp -a "$TMP/*" "server"
+cp -a "$TMP/*" "client"
 
 get "$TMP" "forge.jar" 'http://files.minecraftforge.net/minecraftforge/minecraftforge-universal-latest.zip'
 
